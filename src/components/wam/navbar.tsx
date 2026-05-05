@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./theme-toggle";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#home", label: "Início" },
@@ -50,42 +52,56 @@ export function Navbar() {
 
   return (
     <>
+      {/* Desktop: Centered premium navbar */}
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? "glass-dark shadow-lg shadow-black/20"
-            : "bg-transparent"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 hidden md:block transition-all duration-500 ${
+          isScrolled ? "pt-3" : "pt-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex justify-center">
+          <div
+            className={`flex items-center gap-1 rounded-2xl transition-all duration-500 ${
+              isScrolled
+                ? "glass-dark dark:glass-dark glass-light px-2 py-1.5 shadow-lg shadow-black/10"
+                : "bg-transparent px-2 py-1.5"
+            }`}
+          >
             {/* Logo */}
-            <motion.a
+            <a
               href="#home"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick("#home");
               }}
-              className="flex items-center gap-3 group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-2.5 px-3 py-1.5 rounded-xl hover:bg-white/5 transition-colors"
             >
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55] flex items-center justify-center shadow-lg shadow-[#FF6B2B]/20">
-                <span className="text-lg sm:text-xl font-black text-white">W</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <Image
+                  src="/uploads/wam-design_logo.jpeg"
+                  alt="WAM Design"
+                  width={32}
+                  height={32}
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm sm:text-base font-bold text-white leading-tight">
+                <span className="text-xs font-bold text-[var(--wam-text)] leading-tight">
                   WAM <span className="gradient-text">DESIGN</span>
                 </span>
-                <span className="text-[10px] text-white/40 tracking-[0.2em] leading-tight">SOLUTION</span>
+                <span className="text-[8px] text-[var(--wam-text-faint)] tracking-[0.2em] leading-tight">
+                  SOLUTION
+                </span>
               </div>
-            </motion.a>
+            </a>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Divider */}
+            <div className="w-px h-6 bg-[var(--wam-border)]" />
+
+            {/* Centered Nav Links */}
+            <div className="flex items-center gap-0.5">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -94,50 +110,89 @@ export function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
+                  className={`relative px-3 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-300 ${
                     activeSection === link.href.replace("#", "")
-                      ? "text-[#FF6B2B]"
-                      : "text-white/60 hover:text-white"
+                      ? "text-[#FF6B2B] bg-[#FF6B2B]/10"
+                      : "text-[var(--wam-text-muted)] hover:text-[var(--wam-text)] hover:bg-white/5"
                   }`}
                 >
                   {link.label}
-                  {activeSection === link.href.replace("#", "") && (
-                    <motion.div
-                      layoutId="activeNav"
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#FF6B2B]"
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
                 </a>
               ))}
             </div>
 
-            {/* CTA Button Desktop */}
-            <div className="hidden md:block">
+            {/* Divider */}
+            <div className="w-px h-6 bg-[var(--wam-border)]" />
+
+            {/* Theme Toggle + CTA */}
+            <div className="flex items-center gap-2 pl-1">
+              <ThemeToggle />
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick("#contact");
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF6B2B] to-[#FF2D55] text-white text-sm font-semibold hover:shadow-lg hover:shadow-[#FF6B2B]/25 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-gradient-to-r from-[#FF6B2B] to-[#FF2D55] text-white text-[13px] font-semibold hover:shadow-lg hover:shadow-[#FF6B2B]/25 transition-all duration-300 hover:scale-105"
               >
                 Solicitar Projeto
               </a>
             </div>
+          </div>
+        </div>
+      </motion.nav>
 
-            {/* Mobile Menu Button */}
+      {/* Mobile: Simple navbar with hamburger */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed top-0 left-0 right-0 z-50 md:hidden transition-all duration-500 ${
+          isScrolled ? "glass shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center justify-between h-14 px-4">
+          {/* Logo */}
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("#home");
+            }}
+            className="flex items-center gap-2"
+          >
+            <div className="w-8 h-8 rounded-lg overflow-hidden">
+              <Image
+                src="/uploads/wam-design_logo.jpeg"
+                alt="WAM Design"
+                width={32}
+                height={32}
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xs font-bold text-[var(--wam-text)] leading-tight">
+                WAM <span className="gradient-text">DESIGN</span>
+              </span>
+              <span className="text-[8px] text-[var(--wam-text-faint)] tracking-[0.2em] leading-tight">
+                SOLUTION
+              </span>
+            </div>
+          </a>
+
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-white/70 hover:text-white transition-colors"
+              className="p-2 text-[var(--wam-text-secondary)] hover:text-[var(--wam-text)] transition-colors"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -151,7 +206,7 @@ export function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -161,9 +216,9 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 bottom-0 w-[280px] bg-[#0A0A0A]/95 backdrop-blur-xl border-l border-white/5 p-6 pt-24"
+              className="absolute right-0 top-0 bottom-0 w-[280px] bg-[var(--wam-bg)] border-l border-[var(--wam-border)] p-6 pt-20"
             >
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5">
                 {navLinks.map((link, i) => (
                   <motion.a
                     key={link.href}
@@ -174,18 +229,18 @@ export function Navbar() {
                     }}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
+                    transition={{ delay: i * 0.04 }}
                     className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
                       activeSection === link.href.replace("#", "")
                         ? "bg-gradient-to-r from-[#FF6B2B]/10 to-[#FF2D55]/10 text-[#FF6B2B] border border-[#FF6B2B]/20"
-                        : "text-white/60 hover:text-white hover:bg-white/5"
+                        : "text-[var(--wam-text-secondary)] hover:text-[var(--wam-text)] hover:bg-[var(--wam-glass-bg)]"
                     }`}
                   >
                     {link.label}
                   </motion.a>
                 ))}
 
-                <div className="mt-6 pt-6 border-t border-white/10">
+                <div className="mt-4 pt-4 border-t border-[var(--wam-border)]">
                   <a
                     href="#contact"
                     onClick={(e) => {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/wam/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   keywords: ["WAM Design", "Wilson Macamo", "design gráfico", "social media design", "branding", "motion graphics", "Moçambique", "freelancer designer"],
   authors: [{ name: "Wilson Macamo" }],
   icons: {
-    icon: "/uploads/wam-logo.jpeg",
+    icon: "/uploads/wam-design_logo.jpeg",
   },
   openGraph: {
     title: "WAM DESIGN Solution | by Wilson Macamo",
@@ -43,10 +44,17 @@ export default function RootLayout({
   return (
     <html lang="pt" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A0A0A] text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -19,26 +19,25 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
   return (
     <div ref={ref} className="group">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-white font-semibold text-sm sm:text-base group-hover:text-[#FF6B2B] transition-colors">
+        <span className="text-[var(--wam-text)] font-semibold text-sm sm:text-base group-hover:text-[#FF6B2B] transition-colors">
           {name}
         </span>
         <motion.span
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: delay + 0.5 }}
-          className="text-white/50 text-sm font-medium"
+          className="text-[var(--wam-text-muted)] text-sm font-medium"
         >
           {level}%
         </motion.span>
       </div>
-      <div className="h-2.5 rounded-full bg-white/5 overflow-hidden">
+      <div className="h-2.5 rounded-full bg-[var(--wam-input-bg)] overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={isInView ? { width: `${level}%` } : {}}
           transition={{ duration: 1.2, delay, ease: [0.25, 0.4, 0.25, 1] }}
           className={`h-full rounded-full bg-gradient-to-r ${color} relative`}
         >
-          {/* Shine effect */}
           <div className="absolute inset-0 overflow-hidden rounded-full">
             <motion.div
               className="absolute inset-y-0 w-20 bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -57,6 +56,71 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
   );
 }
 
+/* Real Adobe App Logos as SVG */
+function PhotoshopLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#001E36"/>
+      <path d="M12 34V14h6.5c3.5 0 6 1.5 6 5 0 3-2 5-5.5 5H16v10h-4zm4-13.5h2c2 0 3-1 3-2.5s-1-2.5-3-2.5h-2v5z" fill="#31A8FF"/>
+    </svg>
+  );
+}
+
+function IllustratorLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#330000"/>
+      <path d="M17 34l1.5-5h7l1.5 5h4.5L25 14h-5l-6.5 20H17zm4-8.5l2-7h.5l2 7h-4.5zM30 14v3h3v-3h-3z" fill="#FF9A00"/>
+      <rect x="30" y="19" width="3" height="15" fill="#FF9A00"/>
+    </svg>
+  );
+}
+
+function PremiereLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#00005B"/>
+      <path d="M12 34V14h6c4 0 7 2 7 6s-3 6-7 6h-2v8h-4zm4-11.5h2c2 0 3.5-1 3.5-2.5S20 17.5 18 17.5h-2v5z" fill="#9999FF"/>
+    </svg>
+  );
+}
+
+function AfterEffectsLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#00005B"/>
+      <path d="M16 34l1.5-5h7l1.5 5h4.5L24 14h-5l-6.5 20H16zm4-8.5l2-7h.5l2 7h-4.5zM33 20c-2.5 0-4 1.5-4 4s1.5 4 4 4c1.5 0 2.5-.5 3.5-1.5v3c-1 1-2.5 1.5-4 1.5-4 0-7-2.5-7-7s3-7 7-7c1.5 0 3 .5 4 1.5v3c-1-1-2-1.5-3.5-1.5z" fill="#CF96FD"/>
+    </svg>
+  );
+}
+
+function InDesignLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#49021F"/>
+      <path d="M16 34V14h4v20h-4zm6-10c0-4 2.5-7 6.5-7 1.5 0 3 .5 4 1.5v3.5c-1-1-2-1.5-3.5-1.5-2 0-3.5 1.5-3.5 3.5s1.5 3.5 3.5 3.5c1.5 0 2.5-.5 3.5-1.5v3.5c-1 1-2.5 1.5-4 1.5-4 0-6.5-3-6.5-7z" fill="#FF3366"/>
+    </svg>
+  );
+}
+
+function XDLogo() {
+  return (
+    <svg viewBox="0 0 48 48" className="w-full h-full">
+      <rect width="48" height="48" rx="10" fill="#470137"/>
+      <path d="M14 14l5 8-5 8h4l3-5 3 5h4l-5-8 5-8h-4l-3 5-3-5h-4zM32 14l3 4 3-4h3l-4.5 6 4.5 6h-3l-3-4-3 4h-3l4.5-6L29 14h3z" fill="#FF61F6"/>
+    </svg>
+  );
+}
+
+const adobeApps = [
+  { name: "Photoshop", Logo: PhotoshopLogo },
+  { name: "Illustrator", Logo: IllustratorLogo },
+  { name: "Premiere", Logo: PremiereLogo },
+  { name: "After Effects", Logo: AfterEffectsLogo },
+  { name: "InDesign", Logo: InDesignLogo },
+  { name: "XD", Logo: XDLogo },
+];
+
 export function Skills() {
   return (
     <section id="skills" className="relative py-24 sm:py-32">
@@ -69,10 +133,10 @@ export function Skills() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Skills</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
             Ferramentas & <span className="gradient-text">Habilidades</span>
           </h2>
-          <p className="text-white/40 max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
             Domínio completo das ferramentas Adobe Creative Suite
           </p>
         </ScrollReveal>
@@ -93,38 +157,26 @@ export function Skills() {
             </div>
           </ScrollReveal>
 
-          {/* Visual side */}
+          {/* Adobe App Logos Grid */}
           <ScrollReveal direction="right">
             <div className="relative">
-              {/* Adobe Creative Cloud style visual */}
               <div className="glass rounded-3xl p-8 sm:p-10">
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { letter: "Ps", gradient: "from-[#31A8FF] to-[#001E36]", name: "Photoshop" },
-                    { letter: "Ai", gradient: "from-[#FF9A00] to-[#330000]", name: "Illustrator" },
-                    { letter: "Pr", gradient: "from-[#9999FF] to-[#00005B]", name: "Premiere" },
-                    { letter: "Ae", gradient: "from-[#9999FF] to-[#CF96FD]", name: "After Effects" },
-                    { letter: "Id", gradient: "from-[#FF3366] to-[#49021F]", name: "InDesign" },
-                    { letter: "Xd", gradient: "from-[#FF61F6] to-[#470137]", name: "XD" },
-                  ].map((app, i) => (
+                <div className="grid grid-cols-3 gap-5">
+                  {adobeApps.map((app, i) => (
                     <motion.div
-                      key={app.letter}
-                      whileHover={{ scale: 1.1, rotate: 3 }}
+                      key={app.name}
+                      whileHover={{ scale: 1.12, rotate: 2 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1 }}
-                      className="flex flex-col items-center gap-2"
+                      className="flex flex-col items-center gap-2.5 cursor-pointer"
                     >
-                      <div
-                        className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${app.gradient} flex items-center justify-center shadow-lg cursor-pointer`}
-                      >
-                        <span className="text-white text-lg sm:text-xl font-bold">
-                          {app.letter}
-                        </span>
+                      <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <app.Logo />
                       </div>
-                      <span className="text-white/40 text-[10px] sm:text-xs font-medium">
+                      <span className="text-[var(--wam-text-muted)] text-[10px] sm:text-xs font-medium text-center">
                         {app.name}
                       </span>
                     </motion.div>
@@ -132,29 +184,29 @@ export function Skills() {
                 </div>
 
                 {/* Experience badge */}
-                <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                <div className="mt-8 pt-6 border-t border-[var(--wam-border)] flex items-center justify-between">
                   <div>
-                    <p className="text-white/40 text-xs font-medium uppercase tracking-wider">
+                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
                       Experiência
                     </p>
-                    <p className="text-white text-2xl font-bold mt-1">
-                      5+ <span className="text-sm font-normal text-white/40">anos</span>
+                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
+                      5+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">anos</span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-white/40 text-xs font-medium uppercase tracking-wider">
+                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
                       Projetos
                     </p>
-                    <p className="text-white text-2xl font-bold mt-1">
-                      200+ <span className="text-sm font-normal text-white/40">completos</span>
+                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
+                      200+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">completos</span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-white/40 text-xs font-medium uppercase tracking-wider">
+                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
                       Clientes
                     </p>
-                    <p className="text-white text-2xl font-bold mt-1">
-                      50+ <span className="text-sm font-normal text-white/40">satisfeitos</span>
+                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
+                      50+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">satisfeitos</span>
                     </p>
                   </div>
                 </div>

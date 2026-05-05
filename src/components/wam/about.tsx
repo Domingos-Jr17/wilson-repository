@@ -8,6 +8,7 @@ import {
   Video,
   PenTool,
 } from "lucide-react";
+import Image from "next/image";
 
 const specialties = [
   { icon: Palette, label: "Social Media Design", color: "from-[#FF6B2B] to-[#FFB800]" },
@@ -25,12 +26,11 @@ export function About() {
           {/* Left - Visual */}
           <ScrollReveal direction="left">
             <div className="relative">
-              {/* Avatar/Image container */}
               <div className="relative w-full max-w-md mx-auto lg:mx-0">
                 <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#FF6B2B]/20 via-[#FFB800]/10 to-[#FF2D55]/20 p-1">
-                  <div className="w-full h-full rounded-3xl bg-[#111111] flex items-center justify-center relative overflow-hidden">
-                    {/* Abstract design instead of photo */}
-                    <div className="absolute inset-0 opacity-30">
+                  <div className="w-full h-full rounded-3xl bg-[var(--wam-bg-secondary)] flex items-center justify-center relative overflow-hidden">
+                    {/* Abstract design behind */}
+                    <div className="absolute inset-0 opacity-20">
                       <motion.div
                         className="absolute top-10 right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#FFB800]"
                         animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
@@ -41,17 +41,21 @@ export function About() {
                         animate={{ scale: [1, 1.2, 1], rotate: [0, -5, 0] }}
                         transition={{ duration: 8, repeat: Infinity }}
                       />
-                      <motion.div
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-xl bg-gradient-to-br from-[#FFB800] to-[#FF2D55]"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                      />
                     </div>
+                    {/* Logo/Avatar */}
                     <div className="relative z-10 text-center">
-                      <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-[#FF6B2B] to-[#FF2D55] flex items-center justify-center mb-4">
-                        <span className="text-5xl font-black text-white">WM</span>
+                      <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-[#FF6B2B]/20">
+                        <Image
+                          src="/uploads/wam-design_logo.jpeg"
+                          alt="Wilson Macamo"
+                          width={128}
+                          height={128}
+                          className="object-cover w-full h-full"
+                        />
                       </div>
-                      <p className="text-white/40 text-sm font-medium">Creative Designer</p>
+                      <p className="text-[var(--wam-text-muted)] text-sm font-medium mt-4">
+                        Creative Designer
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -79,13 +83,13 @@ export function About() {
                 <span className="text-[#FF6B2B] text-sm font-medium">Sobre Mim</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-6 leading-tight">
                 Criatividade e{" "}
                 <span className="gradient-text">estratégia</span>{" "}
                 em cada projeto
               </h2>
 
-              <p className="text-white/50 text-base sm:text-lg leading-relaxed mb-8">
+              <p className="text-[var(--wam-text-muted)] text-base sm:text-lg leading-relaxed mb-8">
                 Sou Wilson Macamo, designer gráfico focado em criar soluções visuais
                 modernas e estratégicas. O meu trabalho combina criatividade e
                 marketing para ajudar marcas a aumentar engajamento e fortalecer
@@ -109,7 +113,7 @@ export function About() {
                     >
                       <spec.icon size={18} className="text-white" />
                     </div>
-                    <span className="text-white/60 text-xs sm:text-sm text-center font-medium group-hover:text-white/80 transition-colors">
+                    <span className="text-[var(--wam-text-muted)] text-xs sm:text-sm text-center font-medium group-hover:text-[var(--wam-text-secondary)] transition-colors">
                       {spec.label}
                     </span>
                   </motion.div>

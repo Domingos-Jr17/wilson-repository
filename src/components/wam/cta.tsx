@@ -16,7 +16,7 @@ export function CTA() {
     <section className="relative py-24 sm:py-32 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2B]/10 via-[#0A0A0A] to-[#FF2D55]/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2B]/10 via-[var(--wam-bg)] to-[#FF2D55]/10" />
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
           style={{
@@ -37,11 +37,6 @@ export function CTA() {
           animate={{ y: [0, 15, 0], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 5, repeat: Infinity }}
         />
-        <motion.div
-          className="absolute top-1/3 left-[10%] w-4 h-4 rounded-full bg-[#FF2D55]/20"
-          animate={{ y: [0, -10, 0], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 6, repeat: Infinity }}
-        />
       </div>
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -51,12 +46,12 @@ export function CTA() {
             <span className="text-[#FF6B2B] text-sm font-medium">Vamos criar algo incrível</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--wam-text)] mb-6 leading-tight">
             Vamos trabalhar{" "}
             <span className="gradient-text">juntos?</span>
           </h2>
 
-          <p className="text-white/40 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-[var(--wam-text-muted)] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             Tem um projeto em mente? Vamos transformar a sua visão em realidade
             visual. Estou pronto para criar algo extraordinário para a sua marca.
           </p>

@@ -53,7 +53,6 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="relative py-24 sm:py-32">
-      {/* Subtle background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FF6B2B]/[0.02] to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,10 +62,10 @@ export function Services() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Serviços</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
             O que eu <span className="gradient-text">posso fazer</span> por si
           </h2>
-          <p className="text-white/40 max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
             Soluções visuais completas para elevar a presença digital da sua marca
           </p>
         </ScrollReveal>
@@ -86,14 +85,6 @@ export function Services() {
                 />
 
                 <div className="relative h-full glass rounded-2xl p-6 sm:p-8 overflow-hidden">
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent`}
-                      style={{ animation: "shimmer 3s infinite" }}
-                    />
-                  </div>
-
                   {/* Icon */}
                   <div
                     className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-5 shadow-lg`}
@@ -102,10 +93,10 @@ export function Services() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-[#FF6B2B] transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-[var(--wam-text)] mb-3 group-hover:text-[#FF6B2B] transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-white/40 text-sm sm:text-base leading-relaxed">
+                  <p className="text-[var(--wam-text-muted)] text-sm sm:text-base leading-relaxed">
                     {service.description}
                   </p>
 

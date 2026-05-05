@@ -1,40 +1,26 @@
 ---
-Task ID: 1
+Task ID: 2
 Agent: Main
-Task: Create complete WAM DESIGN Solution website
+Task: Add dark/light mode, fix logo, real Adobe logos, centered navbar, modernize
 
 Work Log:
-- Explored project structure and uploaded files
-- Copied all 9 uploaded portfolio images to public/uploads/
-- Updated globals.css with brand colors, custom scrollbar, glassmorphism, gradient text, shimmer, floating shapes animations, and portfolio grid styles
-- Updated layout.tsx with WAM Design metadata, Portuguese language, and brand icon
-- Created component: Loader (animated intro with logo, brand name, loading bar)
-- Created component: CustomCursor (desktop-only, orange dot + ring with spring physics)
-- Created component: FloatingShapes (5 gradient blobs with float animations)
-- Created component: ScrollReveal (reusable animation wrapper with directional entrance)
-- Created component: Navbar (fixed, glassmorphism on scroll, active section tracking, mobile slide-in menu)
-- Created component: Hero (animated gradient bg, logo, brand name, headline, CTAs, scroll indicator)
-- Created component: About (split layout with avatar visual + text + specialty cards)
-- Created component: Services (6 service cards with gradient icons, hover glow/shimmer effects)
-- Created component: Portfolio (featured project banner, filter tabs, animated grid with real portfolio images)
-- Created component: Skills (animated skill bars with shine effect + Adobe app grid + stats)
-- Created component: Testimonials (4 testimonial cards with stars, quotes, author info)
-- Created component: CTA (emotional call-to-action with gradient bg and animated elements)
-- Created component: Contact (form with validation + contact info cards + social links)
-- Created component: Footer (brand, navigation, services, contact columns + scroll-to-top button)
-- Created main page.tsx composing all sections with dividers
-- Set up Prisma schema with ContactMessage model
-- Pushed schema to database
-- Created API route POST /api/contact for form submission
-- Ran lint: 0 errors
-- Verified dev server compiling and serving correctly
+- Added next-themes ThemeProvider and ThemeToggle component
+- Updated layout.tsx to use ThemeProvider with class-based dark mode
+- Fixed logo everywhere: wam-logo.jpeg → wam-design_logo.jpeg (Hero, Navbar, Loader, About, Footer, favicon)
+- Created custom CSS variables for dark/light mode (--wam-bg, --wam-text, --wam-glass-bg, etc.)
+- Updated globals.css with complete dark/light mode variable system
+- Replaced generic Adobe app icons with real SVG logos (Photoshop, Illustrator, Premiere, After Effects, InDesign, XD)
+- Redesigned Navbar: centered premium header on desktop with all nav links, theme toggle, and CTA; hamburger bar on mobile
+- Added glass-light variant for light mode navbar
+- Updated all sections to use CSS variables instead of hardcoded colors for theme support
+- Improved Portfolio section: added tags, action buttons, better descriptions for each project
+- Added tools section at bottom of portfolio
+- All components updated with var(--wam-*) color tokens for seamless dark/light switching
 
 Stage Summary:
-- Complete premium responsive website for WAM DESIGN Solution
-- All 8 sections implemented: Hero, About, Services, Portfolio, Skills, Testimonials, CTA, Contact
-- All uploaded portfolio images integrated into the Portfolio gallery
-- Brand colors (orange #FF6B2B, yellow #FFB800, red #FF2D55) applied consistently
-- Premium features: custom cursor, animated loader, floating shapes, glassmorphism, scroll animations
-- Mobile-first responsive design with animated hamburger menu
-- Backend contact form with Prisma database storage
-- SEO metadata in Portuguese
+- Dark/Light mode fully functional with toggle in navbar
+- Correct logo (wam-design_logo.jpeg) used everywhere
+- Real Adobe SVG logos replace generic icons in Skills section
+- Premium centered navbar on desktop, hamburger menu on mobile
+- Portfolio section clearer with tags, descriptions, and action buttons
+- All sections respond to theme changes via CSS custom properties

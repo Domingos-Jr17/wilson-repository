@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function Loader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,8 +28,16 @@ export function Loader() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative"
             >
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55] flex items-center justify-center">
-                <span className="text-3xl font-black text-white">W</span>
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55] p-0.5">
+                <div className="w-full h-full rounded-2xl bg-[#0A0A0A] flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/uploads/wam-design_logo.jpeg"
+                    alt="WAM Design"
+                    width={80}
+                    height={80}
+                    className="rounded-xl object-cover"
+                  />
+                </div>
               </div>
               <motion.div
                 className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55]"

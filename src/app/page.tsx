@@ -16,7 +16,7 @@ import { Footer } from "@/components/wam/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#0A0A0A]">
+    <div className="relative min-h-screen flex flex-col bg-[var(--wam-bg)]">
       {/* Premium extras */}
       <Loader />
       <CustomCursor />
@@ -31,31 +31,31 @@ export default function Home() {
 
         {/* Divider */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <About />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <Services />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <Portfolio />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <Skills />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <Testimonials />
@@ -63,7 +63,7 @@ export default function Home() {
         <CTA />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
         </div>
 
         <Contact />
