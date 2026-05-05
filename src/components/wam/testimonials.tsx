@@ -43,10 +43,10 @@ export function Testimonials() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Depoimentos</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             O que dizem os <span className="gradient-text">clientes</span>
           </h2>
-          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Feedback real de quem confia no meu trabalho
           </p>
         </ScrollReveal>
@@ -78,7 +78,7 @@ export function Testimonials() {
                   </div>
 
                   {/* Text */}
-                  <p className="text-[var(--wam-text-muted)] text-sm sm:text-base leading-relaxed mb-6">
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
                     &ldquo;{testimonial.text}&rdquo;
                   </p>
 
@@ -93,10 +93,10 @@ export function Testimonials() {
                       </span>
                     </div>
                     <div>
-                      <p className="text-[var(--wam-text)] font-semibold text-sm">
+                      <p className="text-foreground font-semibold text-sm">
                         {testimonial.name}
                       </p>
-                      <p className="text-[var(--wam-text-muted)] text-xs">{testimonial.role}</p>
+                      <p className="text-muted-foreground text-xs">{testimonial.role}</p>
                     </div>
                   </div>
 

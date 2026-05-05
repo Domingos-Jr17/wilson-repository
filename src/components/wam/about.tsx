@@ -28,7 +28,7 @@ export function About() {
             <div className="relative">
               <div className="relative w-full max-w-md mx-auto lg:mx-0">
                 <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#FF6B2B]/20 via-[#FFB800]/10 to-[#FF2D55]/20 p-1">
-                  <div className="w-full h-full rounded-3xl bg-[var(--wam-bg-secondary)] flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center relative overflow-hidden">
                     {/* Abstract design behind */}
                     <div className="absolute inset-0 opacity-20">
                       <motion.div
@@ -53,7 +53,7 @@ export function About() {
                           className="object-cover w-full h-full"
                         />
                       </div>
-                      <p className="text-[var(--wam-text-muted)] text-sm font-medium mt-4">
+                      <p className="text-muted-foreground text-sm font-medium mt-4">
                         Creative Designer
                       </p>
                     </div>
@@ -83,13 +83,13 @@ export function About() {
                 <span className="text-[#FF6B2B] text-sm font-medium">Sobre Mim</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                 Criatividade e{" "}
                 <span className="gradient-text">estratégia</span>{" "}
                 em cada projeto
               </h2>
 
-              <p className="text-[var(--wam-text-muted)] text-base sm:text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-8">
                 Sou Wilson Macamo, designer gráfico focado em criar soluções visuais
                 modernas e estratégicas. O meu trabalho combina criatividade e
                 marketing para ajudar marcas a aumentar engajamento e fortalecer
@@ -113,7 +113,7 @@ export function About() {
                     >
                       <spec.icon size={18} className="text-white" />
                     </div>
-                    <span className="text-[var(--wam-text-muted)] text-xs sm:text-sm text-center font-medium group-hover:text-[var(--wam-text-secondary)] transition-colors">
+                    <span className="text-muted-foreground text-xs sm:text-sm text-center font-medium group-hover:text-foreground transition-colors">
                       {spec.label}
                     </span>
                   </motion.div>

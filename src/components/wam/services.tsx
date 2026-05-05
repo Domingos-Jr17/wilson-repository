@@ -62,10 +62,10 @@ export function Services() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Serviços</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             O que eu <span className="gradient-text">posso fazer</span> por si
           </h2>
-          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Soluções visuais completas para elevar a presença digital da sua marca
           </p>
         </ScrollReveal>
@@ -93,10 +93,10 @@ export function Services() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg sm:text-xl font-bold text-[var(--wam-text)] mb-3 group-hover:text-[#FF6B2B] transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 group-hover:text-[#FF6B2B] transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-[var(--wam-text-muted)] text-sm sm:text-base leading-relaxed">
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                     {service.description}
                   </p>
 

@@ -19,19 +19,19 @@ function SkillBar({ name, level, color, delay }: { name: string; level: number; 
   return (
     <div ref={ref} className="group">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-[var(--wam-text)] font-semibold text-sm sm:text-base group-hover:text-[#FF6B2B] transition-colors">
+        <span className="text-foreground font-semibold text-sm sm:text-base group-hover:text-[#FF6B2B] transition-colors">
           {name}
         </span>
         <motion.span
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: delay + 0.5 }}
-          className="text-[var(--wam-text-muted)] text-sm font-medium"
+          className="text-muted-foreground text-sm font-medium"
         >
           {level}%
         </motion.span>
       </div>
-      <div className="h-2.5 rounded-full bg-[var(--wam-input-bg)] overflow-hidden">
+      <div className="h-2.5 rounded-full bg-secondary overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={isInView ? { width: `${level}%` } : {}}
@@ -133,10 +133,10 @@ export function Skills() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Skills</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Ferramentas & <span className="gradient-text">Habilidades</span>
           </h2>
-          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Domínio completo das ferramentas Adobe Creative Suite
           </p>
         </ScrollReveal>
@@ -176,7 +176,7 @@ export function Skills() {
                       <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                         <app.Logo />
                       </div>
-                      <span className="text-[var(--wam-text-muted)] text-[10px] sm:text-xs font-medium text-center">
+                      <span className="text-muted-foreground text-[10px] sm:text-xs font-medium text-center">
                         {app.name}
                       </span>
                     </motion.div>
@@ -184,29 +184,29 @@ export function Skills() {
                 </div>
 
                 {/* Experience badge */}
-                <div className="mt-8 pt-6 border-t border-[var(--wam-border)] flex items-center justify-between">
+                <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
                   <div>
-                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
+                    <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
                       Experiência
                     </p>
-                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
-                      5+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">anos</span>
+                    <p className="text-foreground text-2xl font-bold mt-1">
+                      5+ <span className="text-sm font-normal text-muted-foreground">anos</span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
+                    <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
                       Projetos
                     </p>
-                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
-                      200+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">completos</span>
+                    <p className="text-foreground text-2xl font-bold mt-1">
+                      200+ <span className="text-sm font-normal text-muted-foreground">completos</span>
                     </p>
                   </div>
                   <div>
-                    <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider">
+                    <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
                       Clientes
                     </p>
-                    <p className="text-[var(--wam-text)] text-2xl font-bold mt-1">
-                      50+ <span className="text-sm font-normal text-[var(--wam-text-muted)]">satisfeitos</span>
+                    <p className="text-foreground text-2xl font-bold mt-1">
+                      50+ <span className="text-sm font-normal text-muted-foreground">satisfeitos</span>
                     </p>
                   </div>
                 </div>

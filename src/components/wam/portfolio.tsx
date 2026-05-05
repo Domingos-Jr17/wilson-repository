@@ -93,10 +93,10 @@ export function Portfolio() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Portfólio</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Trabalhos em <span className="gradient-text">destaque</span>
           </h2>
-          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Uma seleção dos meus melhores projetos de design, branding e identidade visual
           </p>
         </ScrollReveal>
@@ -111,7 +111,7 @@ export function Portfolio() {
                 className={`px-5 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
                   activeFilter === category
                     ? "bg-gradient-to-r from-[#FF6B2B] to-[#FF2D55] text-white shadow-lg shadow-[#FF6B2B]/20"
-                    : "glass text-[var(--wam-text-muted)] hover:text-[var(--wam-text)]"
+                    : "glass text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {category}
@@ -151,7 +151,7 @@ export function Portfolio() {
                         opacity: hoveredId === item.id ? 1 : 0,
                       }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-gradient-to-t from-[var(--wam-bg)] via-[var(--wam-bg)]/60 to-transparent flex flex-col justify-end p-4 sm:p-5"
+                      className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent flex flex-col justify-end p-4 sm:p-5"
                     >
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-2">
@@ -193,17 +193,17 @@ export function Portfolio() {
         {/* Tools section */}
         <ScrollReveal className="mt-16">
           <div className="glass rounded-2xl p-6 sm:p-8">
-            <h3 className="text-lg sm:text-xl font-bold text-[var(--wam-text)] mb-2 text-center">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2 text-center">
               Ferramentas Utilizadas
             </h3>
-            <p className="text-[var(--wam-text-muted)] text-sm text-center mb-6">
+            <p className="text-muted-foreground text-sm text-center mb-6">
               Domino as principais ferramentas da Adobe Creative Suite
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {["Photoshop", "Illustrator", "Premiere Pro", "After Effects", "InDesign"].map((tool) => (
                 <span
                   key={tool}
-                  className="px-4 py-2 rounded-xl bg-[var(--wam-glass-bg)] border border-[var(--wam-border)] text-[var(--wam-text-secondary)] text-sm font-medium hover:border-[#FF6B2B]/30 hover:text-[#FF6B2B] transition-all"
+                  className="px-4 py-2 rounded-xl bg-accent border border-border text-foreground text-sm font-medium hover:border-[#FF6B2B]/30 hover:text-[#FF6B2B] transition-all"
                 >
                   {tool}
                 </span>

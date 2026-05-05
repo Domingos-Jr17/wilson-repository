@@ -1,26 +1,32 @@
 ---
-Task ID: 2
+Task ID: 3
 Agent: Main
-Task: Add dark/light mode, fix logo, real Adobe logos, centered navbar, modernize
+Task: Fix dark/light mode using standard Tailwind/shadcn pattern
 
 Work Log:
-- Added next-themes ThemeProvider and ThemeToggle component
-- Updated layout.tsx to use ThemeProvider with class-based dark mode
-- Fixed logo everywhere: wam-logo.jpeg → wam-design_logo.jpeg (Hero, Navbar, Loader, About, Footer, favicon)
-- Created custom CSS variables for dark/light mode (--wam-bg, --wam-text, --wam-glass-bg, etc.)
-- Updated globals.css with complete dark/light mode variable system
-- Replaced generic Adobe app icons with real SVG logos (Photoshop, Illustrator, Premiere, After Effects, InDesign, XD)
-- Redesigned Navbar: centered premium header on desktop with all nav links, theme toggle, and CTA; hamburger bar on mobile
-- Added glass-light variant for light mode navbar
-- Updated all sections to use CSS variables instead of hardcoded colors for theme support
-- Improved Portfolio section: added tags, action buttons, better descriptions for each project
-- Added tools section at bottom of portfolio
-- All components updated with var(--wam-*) color tokens for seamless dark/light switching
+- Diagnosed the problem: custom CSS variables (var(--wam-*)) don't integrate with Tailwind's dark: prefix or shadcn's theme system
+- Rewrote globals.css with proper :root (light) and .dark (dark) CSS variable definitions using oklch values
+- Added glass CSS variables (--glass, --glass-border, --glass-hover) to both :root and .dark and registered them in @theme inline
+- Replaced ALL var(--wam-*) usage across 10 component files with standard shadcn Tailwind classes:
+  - var(--wam-text) → text-foreground
+  - var(--wam-text-muted) → text-muted-foreground
+  - var(--wam-bg) → bg-background
+  - var(--wam-bg-secondary) → bg-card
+  - var(--wam-glass-bg) → bg-accent
+  - var(--wam-border) → border-border
+  - var(--wam-input-bg) → bg-secondary
+  - var(--wam-input-border) → border-input
+  - etc.
+- Updated FloatingShapes to use dark: prefix for different opacity in light/dark
+- Updated Navbar with proper shadcn classes
+- Updated ThemeToggle with proper muted-foreground colors
+- Verified 0 remaining var(--wam-) references in src/
+- Ran lint: 0 errors
+- Dev server compiles and serves correctly
 
 Stage Summary:
-- Dark/Light mode fully functional with toggle in navbar
-- Correct logo (wam-design_logo.jpeg) used everywhere
-- Real Adobe SVG logos replace generic icons in Skills section
-- Premium centered navbar on desktop, hamburger menu on mobile
-- Portfolio section clearer with tags, descriptions, and action buttons
-- All sections respond to theme changes via CSS custom properties
+- Dark/light mode now uses the standard Tailwind/shadcn pattern
+- :root = light mode, .dark = dark mode (managed by next-themes with attribute="class")
+- All components use semantic shadcn classes (bg-background, text-foreground, etc.)
+- Theme toggle in navbar properly switches between modes
+- Default theme is dark

@@ -16,7 +16,7 @@ export function CTA() {
     <section className="relative py-24 sm:py-32 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2B]/10 via-[var(--wam-bg)] to-[#FF2D55]/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2B]/10 via-background to-[#FF2D55]/10" />
         <motion.div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
           style={{
@@ -46,12 +46,12 @@ export function CTA() {
             <span className="text-[#FF6B2B] text-sm font-medium">Vamos criar algo incrível</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--wam-text)] mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
             Vamos trabalhar{" "}
             <span className="gradient-text">juntos?</span>
           </h2>
 
-          <p className="text-[var(--wam-text-muted)] text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             Tem um projeto em mente? Vamos transformar a sua visão em realidade
             visual. Estou pronto para criar algo extraordinário para a sua marca.
           </p>

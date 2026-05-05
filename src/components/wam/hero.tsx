@@ -7,57 +7,38 @@ import Image from "next/image";
 export function Hero() {
   const handleScroll = (href: string) => {
     const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-[var(--wam-bg)]" />
+      <div className="absolute inset-0 bg-background" />
+
       <motion.div
-        className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full floating-shape-orange"
-        style={{
-          background: "radial-gradient(circle, rgba(255,107,43,0.15) 0%, transparent 70%)",
-        }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.5, 0.8, 0.5],
-        }}
+        className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(255,107,43,0.15) 0%, transparent 70%)" }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full floating-shape-red"
-        style={{
-          background: "radial-gradient(circle, rgba(255,45,85,0.12) 0%, transparent 70%)",
-        }}
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.4, 0.7, 0.4],
-        }}
+        className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(255,45,85,0.12) 0%, transparent 70%)" }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-[40%] left-[30%] w-[400px] h-[400px] rounded-full floating-shape-yellow"
-        style={{
-          background: "radial-gradient(circle, rgba(255,184,0,0.08) 0%, transparent 70%)",
-        }}
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
+        className="absolute top-[40%] left-[30%] w-[400px] h-[400px] rounded-full"
+        style={{ background: "radial-gradient(circle, rgba(255,184,0,0.08) 0%, transparent 70%)" }}
+        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
+
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage:
-            "linear-gradient(var(--wam-text-faint) 1px, transparent 1px), linear-gradient(90deg, var(--wam-text-faint) 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -72,8 +53,8 @@ export function Hero() {
           className="mb-8 flex justify-center"
         >
           <div className="relative">
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55] p-0.5 shadow-2xl shadow-[#FF6B2B]/20">
-              <div className="w-full h-full rounded-3xl bg-[var(--wam-bg)] flex items-center justify-center overflow-hidden">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-wam-orange via-wam-yellow to-wam-red p-0.5 shadow-2xl shadow-wam-orange/20">
+              <div className="w-full h-full rounded-3xl bg-background flex items-center justify-center overflow-hidden">
                 <Image
                   src="/uploads/wam-design_logo.jpeg"
                   alt="WAM Design Solution Logo"
@@ -85,7 +66,7 @@ export function Hero() {
               </div>
             </div>
             <motion.div
-              className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-[#FF6B2B] via-[#FFB800] to-[#FF2D55] opacity-20 blur-xl"
+              className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-wam-orange via-wam-yellow to-wam-red opacity-20 blur-xl"
               animate={{ opacity: [0.15, 0.35, 0.15] }}
               transition={{ duration: 3, repeat: Infinity }}
             />
@@ -98,10 +79,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-[var(--wam-text)]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tight text-foreground">
             WAM <span className="gradient-text">DESIGN</span>
           </h1>
-          <p className="text-lg sm:text-xl text-[var(--wam-text-faint)] tracking-[0.3em] mt-2 font-light">
+          <p className="text-lg sm:text-xl text-muted-foreground tracking-[0.3em] mt-2 font-light">
             SOLUTION
           </p>
         </motion.div>
@@ -111,9 +92,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-base sm:text-lg text-[var(--wam-text-muted)] mt-4 font-medium"
+          className="text-base sm:text-lg text-muted-foreground mt-4 font-medium"
         >
-          by <span className="text-[#FFB800]">Wilson Macamo</span>
+          by <span className="text-wam-yellow">Wilson Macamo</span>
         </motion.p>
 
         {/* Headline */}
@@ -123,7 +104,7 @@ export function Hero() {
           transition={{ delay: 0.7, duration: 0.6 }}
           className="mt-10 max-w-3xl mx-auto"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[var(--wam-text)] leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground leading-tight">
             Transformando ideias em{" "}
             <span className="gradient-text">experiências visuais</span>{" "}
             de alto impacto
@@ -135,7 +116,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          className="mt-6 text-base sm:text-lg text-[var(--wam-text-muted)] max-w-2xl mx-auto leading-relaxed"
+          className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
         >
           Designer gráfico especializado em criar conteúdos visuais estratégicos
           para marcas que querem crescer nas redes sociais.
@@ -150,15 +131,15 @@ export function Hero() {
         >
           <button
             onClick={() => handleScroll("#portfolio")}
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-[#FF6B2B] to-[#FF2D55] text-white font-semibold text-base hover:shadow-xl hover:shadow-[#FF6B2B]/20 transition-all duration-300 hover:scale-105"
+            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-wam-orange to-wam-red text-white font-semibold text-base hover:shadow-xl hover:shadow-wam-orange/20 transition-all duration-300 hover:scale-105"
           >
             <Sparkles size={18} />
             Ver Portfólio
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#FF6B2B] to-[#FF2D55] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-wam-orange to-wam-red opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-300 -z-10" />
           </button>
           <button
             onClick={() => handleScroll("#contact")}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border border-[var(--wam-border)] text-[var(--wam-text-secondary)] font-semibold text-base hover:bg-[var(--wam-glass-bg)] hover:border-[var(--wam-border-hover)] hover:text-[var(--wam-text)] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border border-border text-muted-foreground font-semibold text-base hover:bg-accent hover:text-foreground transition-all duration-300"
           >
             Entrar em Contato
           </button>
@@ -174,7 +155,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-[var(--wam-text-faint)]"
+            className="flex flex-col items-center gap-2 text-muted-foreground"
           >
             <span className="text-xs tracking-widest uppercase">Scroll</span>
             <ArrowDown size={16} />

@@ -15,7 +15,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10" />
+      <div className="w-9 h-9 rounded-xl bg-muted border border-border" />
     );
   }
 
@@ -36,7 +36,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute"
       >
-        <Moon size={16} className="text-white/60 group-hover:text-[#FF6B2B] transition-colors" />
+        <Moon size={16} className="text-muted-foreground group-hover:text-wam-orange transition-colors" />
       </motion.div>
       <motion.div
         initial={false}
@@ -47,7 +47,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
         className="absolute"
       >
-        <Sun size={16} className="text-amber-500 group-hover:text-[#FF6B2B] transition-colors" />
+        <Sun size={16} className="text-amber-500 group-hover:text-wam-orange transition-colors" />
       </motion.div>
     </motion.button>
   );

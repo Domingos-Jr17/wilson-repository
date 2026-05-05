@@ -16,7 +16,7 @@ import { Footer } from "@/components/wam/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[var(--wam-bg)]">
+    <div className="relative min-h-screen flex flex-col bg-background">
       {/* Premium extras */}
       <Loader />
       <CustomCursor />
@@ -29,33 +29,32 @@ export default function Home() {
       <main className="flex-1 relative z-10">
         <Hero />
 
-        {/* Divider */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <About />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <Services />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <Portfolio />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <Skills />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <Testimonials />
@@ -63,7 +62,7 @@ export default function Home() {
         <CTA />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="h-px bg-gradient-to-r from-transparent via-[var(--wam-section-divider)] to-transparent" />
+          <div className="h-px bg-border" />
         </div>
 
         <Contact />

@@ -25,7 +25,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-[var(--wam-section-divider)]">
+    <footer className="relative border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
         <div className="py-12 sm:py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -42,13 +42,13 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="text-base font-bold text-[var(--wam-text)]">
+                <span className="text-base font-bold text-foreground">
                   WAM <span className="gradient-text">DESIGN</span>
                 </span>
-                <p className="text-[10px] text-[var(--wam-text-faint)] tracking-[0.2em]">SOLUTION</p>
+                <p className="text-[10px] text-muted-foreground tracking-[0.2em]">SOLUTION</p>
               </div>
             </div>
-            <p className="text-[var(--wam-text-muted)] text-sm leading-relaxed max-w-xs">
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Transformando ideias em experiências visuais de alto impacto.
               Design estratégico para marcas que querem crescer.
             </p>
@@ -56,7 +56,7 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[var(--wam-text)] font-semibold text-sm mb-4">Navegação</h4>
+            <h4 className="text-foreground font-semibold text-sm mb-4">Navegação</h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -66,7 +66,7 @@ export function Footer() {
                       e.preventDefault();
                       handleNavClick(link.href);
                     }}
-                    className="text-[var(--wam-text-muted)] text-sm hover:text-[#FF6B2B] transition-colors"
+                    className="text-muted-foreground text-sm hover:text-[#FF6B2B] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -77,7 +77,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[var(--wam-text)] font-semibold text-sm mb-4">Serviços</h4>
+            <h4 className="text-foreground font-semibold text-sm mb-4">Serviços</h4>
             <ul className="space-y-2">
               {[
                 "Social Media Design",
@@ -87,7 +87,7 @@ export function Footer() {
                 "Design Publicitário",
               ].map((service) => (
                 <li key={service}>
-                  <span className="text-[var(--wam-text-muted)] text-sm">{service}</span>
+                  <span className="text-muted-foreground text-sm">{service}</span>
                 </li>
               ))}
             </ul>
@@ -95,12 +95,12 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[var(--wam-text)] font-semibold text-sm mb-4">Contato</h4>
+            <h4 className="text-foreground font-semibold text-sm mb-4">Contato</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="mailto:wilson.macamo@email.com"
-                  className="text-[var(--wam-text-muted)] text-sm hover:text-[#FF6B2B] transition-colors"
+                  className="text-muted-foreground text-sm hover:text-[#FF6B2B] transition-colors"
                 >
                   wilson.macamo@email.com
                 </a>
@@ -108,7 +108,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+258844695104"
-                  className="text-[var(--wam-text-muted)] text-sm hover:text-[#FF6B2B] transition-colors"
+                  className="text-muted-foreground text-sm hover:text-[#FF6B2B] transition-colors"
                 >
                   +258 84 4695 104
                 </a>
@@ -116,7 +116,7 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+258874526997"
-                  className="text-[var(--wam-text-muted)] text-sm hover:text-[#FF6B2B] transition-colors"
+                  className="text-muted-foreground text-sm hover:text-[#FF6B2B] transition-colors"
                 >
                   +258 87 452 6997
                 </a>
@@ -135,12 +135,12 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-[var(--wam-glass-bg)] border border-[var(--wam-border)] flex items-center justify-center hover:bg-[#FF6B2B]/10 hover:border-[#FF6B2B]/20 transition-colors group"
+                  className="w-9 h-9 rounded-lg bg-accent border border-border flex items-center justify-center hover:bg-[#FF6B2B]/10 hover:border-[#FF6B2B]/20 transition-colors group"
                   aria-label={social.label}
                 >
                   <social.icon
                     size={15}
-                    className="text-[var(--wam-text-muted)] group-hover:text-[#FF6B2B] transition-colors"
+                    className="text-muted-foreground group-hover:text-[#FF6B2B] transition-colors"
                   />
                 </a>
               ))}
@@ -149,11 +149,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-[var(--wam-section-divider)] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[var(--wam-text-faint)] text-xs sm:text-sm text-center sm:text-left">
+        <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
             © {new Date().getFullYear()} WAM DESIGN Solution. Todos os direitos reservados.
           </p>
-          <p className="text-[var(--wam-text-faint)] text-xs flex items-center gap-1">
+          <p className="text-muted-foreground text-xs flex items-center gap-1">
             Feito com <Heart size={12} className="text-[#FF2D55] fill-[#FF2D55]" /> por Wilson Macamo
           </p>
         </div>

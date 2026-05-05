@@ -91,10 +91,10 @@ export function Contact() {
             <div className="w-2 h-2 rounded-full bg-[#FF6B2B] animate-pulse" />
             <span className="text-[#FF6B2B] text-sm font-medium">Contato</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--wam-text)] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Vamos <span className="gradient-text">conversar</span>
           </h2>
-          <p className="text-[var(--wam-text-muted)] max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
             Pronto para dar o próximo passo? Entre em contato e vamos começar
           </p>
         </ScrollReveal>
@@ -112,10 +112,10 @@ export function Contact() {
                   <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mb-4">
                     <CheckCircle size={32} className="text-green-500" />
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--wam-text)] mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
                     Mensagem Enviada!
                   </h3>
-                  <p className="text-[var(--wam-text-muted)]">
+                  <p className="text-muted-foreground">
                     Obrigado pelo contato. Responderei em breve!
                   </p>
                 </motion.div>
@@ -124,7 +124,7 @@ export function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-[var(--wam-text-secondary)] text-sm font-medium mb-2"
+                      className="block text-foreground text-sm font-medium mb-2"
                     >
                       Nome
                     </label>
@@ -136,14 +136,14 @@ export function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--wam-input-bg)] border border-[var(--wam-input-border)] text-[var(--wam-text)] placeholder-[var(--wam-text-faint)] focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-secondary border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all"
                       placeholder="Seu nome"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-[var(--wam-text-secondary)] text-sm font-medium mb-2"
+                      className="block text-foreground text-sm font-medium mb-2"
                     >
                       Email
                     </label>
@@ -155,14 +155,14 @@ export function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--wam-input-bg)] border border-[var(--wam-input-border)] text-[var(--wam-text)] placeholder-[var(--wam-text-faint)] focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-secondary border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all"
                       placeholder="seuemail@exemplo.com"
                     />
                   </div>
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-[var(--wam-text-secondary)] text-sm font-medium mb-2"
+                      className="block text-foreground text-sm font-medium mb-2"
                     >
                       Mensagem
                     </label>
@@ -174,7 +174,7 @@ export function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--wam-input-bg)] border border-[var(--wam-input-border)] text-[var(--wam-text)] placeholder-[var(--wam-text-faint)] focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-secondary border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#FF6B2B]/50 focus:ring-1 focus:ring-[#FF6B2B]/50 transition-all resize-none"
                       placeholder="Descreva o seu projeto..."
                     />
                   </div>
@@ -223,10 +223,10 @@ export function Contact() {
                     <info.icon size={18} className="text-[#FF6B2B]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[var(--wam-text-muted)] text-xs font-medium">
+                    <p className="text-muted-foreground text-xs font-medium">
                       {info.label}
                     </p>
-                    <p className="text-[var(--wam-text)] text-sm font-medium truncate">
+                    <p className="text-foreground text-sm font-medium truncate">
                       {info.value}
                     </p>
                   </div>
@@ -235,7 +235,7 @@ export function Contact() {
 
               {/* Social Links */}
               <div className="pt-4">
-                <p className="text-[var(--wam-text-faint)] text-xs font-medium uppercase tracking-wider mb-3">
+                <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider mb-3">
                   Redes Sociais
                 </p>
                 <div className="flex gap-3">
@@ -256,7 +256,7 @@ export function Contact() {
                     >
                       <social.icon
                         size={18}
-                        className="text-[var(--wam-text-muted)] group-hover:text-[#FF6B2B] transition-colors"
+                        className="text-muted-foreground group-hover:text-[#FF6B2B] transition-colors"
                       />
                     </motion.a>
                   ))}
