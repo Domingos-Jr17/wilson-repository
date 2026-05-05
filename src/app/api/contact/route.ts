@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+// import { db } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,14 +22,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Store in database
-    await db.contactMessage.create({
-      data: {
-        name: String(name).slice(0, 200),
-        email: String(email).slice(0, 200),
-        message: String(message).slice(0, 5000),
-      },
-    });
+    // Store in database (comented - will add later)
+    // await db.contactMessage.create({
+    //   data: {
+    //     name: String(name).slice(0, 200),
+    //     email: String(email).slice(0, 200),
+    //     message: String(message).slice(0, 5000),
+    //   },
+    // });
 
     return NextResponse.json(
       { success: true, message: "Mensagem enviada com sucesso!" },
