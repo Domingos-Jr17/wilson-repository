@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev ",
-    "build": "next build && powershell -Command \"Copy-Item -Recurse -Force .next/static .next/standalone/.next/; Copy-Item -Recurse -Force public .next/standalone/\"",
+    "build": "next build && sh -c 'cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/'",
     "start": "NODE_ENV=production bun .next/standalone/server.js",
     "lint": "eslint .",
     "db:push": "prisma db push",
